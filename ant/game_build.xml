@@ -1,0 +1,46 @@
+<project name="compilation des jeux" default="compiler" basedir="..">
+	
+	<property name="debugdir" value="${basedir}/bin">
+		</property>
+	<property name="srcdir" value="${basedir}/src">
+	</property>
+	<property name="maindir" value="${srcdir}/fr/acversailles/crdp/glup/framework">
+	</property>
+	<property name="bindir" value="${basedir}/bin">
+	</property>
+	<property name="libdir" value="${basedir}/lib">
+	</property>
+	<property name="antdir" value="${basedir}/ant">
+	</property>
+	<loadproperties srcFile="${antdir}/local.properties"/>
+	<property name="game_token" value="GAME_TOKEN">
+	</property>
+
+
+	<target name="compiler">
+		<exec executable="${mxmlc}" failonerror="true">
+			<arg path="${maindir}/Main.as" />
+			<arg line="-compiler.source-path ${srcdir}" />
+			<arg line="-compiler.library-path ${sdkdir}/frameworks/libs" />
+			<arg line="-compiler.library-path ${basedir}/lib" />
+			<arg line="-output ${bindir}/${nom_swf}.swf" />
+			<arg line="-default-size ${largeur} ${hauteur}" />
+			<arg line="-default-frame-rate 24" />
+			<arg line="-use-network=true" />
+			<arg line="-target-player=11.1.0" />
+			<arg line="-default-background-color 0x80bdeb" />
+			<arg line="-static-link-runtime-shared-libraries=true" />
+			<arg line='-define=CONFIG::chemin_options,&quot;&apos;${chemin_options}&apos;&quot;' />
+			<arg line='-define=CONFIG::chemin_contenu,&quot;&apos;${chemin_contenu}&apos;&quot;' />
+			<arg line='-define=CONFIG::nom,&quot;&apos;${game_name}&apos;&quot;' />
+			<arg line='-define=CONFIG::largeur,&quot;&apos;${largeur}&apos;&quot;' />
+			<arg line='-define=CONFIG::hauteur,&quot;&apos;${hauteur}&apos;&quot;' />
+		</exec>
+		<exec executable="${bindir}/FlashPlayerDebug">
+			<arg path="${bindir}/${swf_name}.swf" />
+
+		</exec>
+	</target>
+
+
+</project>

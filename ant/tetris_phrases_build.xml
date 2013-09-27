@@ -1,0 +1,11 @@
+<project name="tetris - test local" default="compiler" basedir="..">
+	<target name="compiler">
+		<ant antfile="ant/game_build.xml">
+			<property name="game_name" value="MOTS-TRIS" />
+			<property name="chemin_options" value="../../../../../../data/options_4db588236ff5a.xml" />
+			<property name="chemin_contenu" value="../../../../../../data/contenu_4db588236ff5a.xml" />
+			<property name="largeur" value="1024" />
+			<property name="hauteur" value="768" />
+		</ant>
+	</target>
+</project>

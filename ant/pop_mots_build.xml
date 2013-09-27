@@ -1,0 +1,22 @@
+<project name="build pop mots 1" default="test-pop-mots" basedir="..">
+	<property name="auto.dir" value="${basedir}/data/vero" />
+	<property name="ant.dir" value="${basedir}/ant" />
+	<target name="test-pop-mots">
+			<antcall target="compiler">
+				<param name="game_name" value="POP-MOTS" />
+				<param name="xml_name" value="popbug" />
+				<param name="swf_name" value="popbug" />
+			</antcall>
+	</target>
+	<target name="compiler">
+		<ant antfile="ant/game_build.xml">
+			<property name="game_name" value="${game_name}" />
+			<property name="nom_swf" value="${swf_name}" />
+			<property name="chemin_options" value="../../../../../../data/options_${xml_name}.xml" />
+			<property name="chemin_contenu" value="../../../../../../data/contenu_${xml_name}.xml" />
+			<property name="largeur" value="1024" />
+			<property name="hauteur" value="768" />
+		</ant>
+
+	</target>
+</project>

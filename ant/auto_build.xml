@@ -1,0 +1,55 @@
+<project name="autobuild" default="serial_compilation" basedir="..">
+	<property name="auto.dir" value="${basedir}/data/vero" />
+	<property name="ant.dir" value="${basedir}/ant" />
+	<taskdef name="for" classname="net.sf.antcontrib.logic.ForTask">
+		<classpath>
+			<pathelement location="${ant.dir}/ant-contrib-1.0b3.jar" />
+		</classpath>
+
+	</taskdef>
+	<taskdef name="propertyregex" classname="net.sf.antcontrib.property.RegexTask">
+		<classpath>
+			<pathelement location="${ant.dir}/ant-contrib-1.0b3.jar" />
+		</classpath>
+
+	</taskdef>
+	<target name="serial_compilation">
+
+		<for param="file">
+			<path>
+				<fileset dir="${auto.dir}">
+
+				</fileset>
+			</path>
+			<sequential>
+				<propertyregex property="swf_name" override="true" input="@{file}" regexp="contenu_([\w]*)\.xml" select="\1" casesensitive="true" />
+				<echo message="compilation Mots-tris" />
+				<echo message="${swf_name}" />
+				<antcall target="compiler">
+					<param name="game_name" value="MOTS-TRIS" />
+					<param name="swf_name" value="${swf_name}" />
+
+				</antcall>
+				<echo message="allumots" />
+				<echo message="${swf_name}" />
+				<antcall target="compiler">
+					<param name="game_name" value="BRULE-MOTS" />
+					<param name="swf_name" value="${swf_name}" />
+
+				</antcall>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="compiler">
+		<ant antfile="ant/game_build.xml">
+			<property name="game_name" value="${game_name}" />
+			<property name="nom_swf" value="${game_name}_${swf_name}" />
+			<property name="chemin_options" value="../../../../../../data/vero/options_${swf_name}.xml" />
+			<property name="chemin_contenu" value="../../../../../../data/vero/contenu_${swf_name}.xml" />
+			<property name="largeur" value="1024" />
+			<property name="hauteur" value="768" />
+		</ant>
+
+	</target>
+</project>

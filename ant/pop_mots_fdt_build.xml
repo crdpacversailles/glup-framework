@@ -1,0 +1,17 @@
+<project name="fdt build pop mots" default="Main">
+	<target name="Main">
+		<fdt.loadProjectProperties projectname="GLUP_FRAMEWORK" />
+		<fdt.launch.application projectname="${FDTProject}" 
+			mainclass="${FDTProjectPath}/src/fr/acversailles/crdp/glup/framework/Main.as" 
+			compilerarguments="-target-player=${FDTProjectPlayerVersion} -library-path+='${FDTProjectSdkPath}/frameworks/locale/en_US' -default-size=800,600 -static-link-runtime-shared-libraries=true -define CONFIG::chemin_options,'../../../../../../data/options_pop-mots-1.xml' -define CONFIG::chemin_contenu,'../../../../../../data/contenu_pop-mots-1.xml' -define CONFIG::largeur,'800' -define CONFIG::hauteur,'600' -define CONFIG::nom,'POP-MOTS'" 
+			target="${FDTProjectPath}/bin/pop-mots.swf" 
+			startswf="false" swflauncher="External SWF Viewer" 
+			swflocation="bin/pop-mots.swf" 
+			killpreviousviewer="false" 
+			height="600" 
+			width="800" />
+
+	</target>
+</project>
+
+

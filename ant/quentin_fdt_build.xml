@@ -1,0 +1,18 @@
+<project name="fdt build jeu quentin" default="Main" basedir="../">
+	<target name="Main"  >
+		<fdt.loadProjectProperties projectname="GLUP_FRAMEWORK" />
+		<fdt.launch.application projectname="${FDTProject}"
+			mainclass="${FDTProjectPath}/src/fr/acversailles/crdp/glup/framework/Main.as" 
+			compilerarguments="-target-player=${FDTProjectPlayerVersion} -library-path+='${FDTProjectSdkPath}/frameworks/locale/en_US' -default-size=800,600 -static-link-runtime-shared-libraries=true -define CONFIG::chemin_options,'../../../../../../data/options_test1.xml' -define CONFIG::chemin_contenu,'../../../../../../data/contenu_test1.xml' -define CONFIG::largeur,'800' -define CONFIG::hauteur,'600' -define CONFIG::nom,'JEU-QUENTIN'" 
+			target="${FDTProjectPath}/bin/test1.swf" 
+			startswf="true" swflauncher="Adobe Flash Player" 
+			swflocation="${basedir}/bin/test1.swf" 
+			killpreviousviewer="false"
+			height="600" 
+			width="800"
+			debug="true"
+			/>
+	</target>
+</project>
+
+

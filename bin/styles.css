@@ -1,0 +1,16 @@
+#flashContent 
+{
+	display:none;
+}
+body 
+{
+	background-color: #5CADFF;
+}
+.cadre
+{
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	padding:0px;
+	background-color:#5CADFF;
+}

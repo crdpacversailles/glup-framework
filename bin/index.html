@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
+    <!-- 
+    Smart developers always View Source. 
+    
+    This application was built using Adobe Flex, an open source framework
+    for building rich Internet applications that get delivered via the
+    Flash Player or to desktops via Adobe AIR. 
+    
+    Learn more about Flex at http://flex.org 
+    // -->
+    <head>
+        <title>Demos Glups</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style type="text/css" media="screen"> 
+            html, body  { height:100%; }
+            body { margin:0; padding:0; overflow:auto; text-align:center; 
+                   background-color: #000000; }   
+            object:focus { outline:none; }
+		#container_swfobject {
+		position:absolute;
+		top:1.5em;
+		left:0;
+		width:100%;
+		height:100%;
+z-index:1;
+		}
+a {
+color:#FFFFFF;
+}
+		#menu {
+		position:fixed;
+		top:0;
+		left:0;
+
+		z-index:99;
+		text-align:left;
+		background-color: #000000; 
+		}
+
+        </style>
+        
+        <!-- Enable Browser History by replacing useBrowserHistory tokens with two hyphens -->
+        <!-- BEGIN Browser History required section -->
+        <link rel="stylesheet" type="text/css" href="history/history.css" />
+        <script type="text/javascript" src="history/history.js"></script>
+        <!-- END Browser History required section -->  
+            
+        <script type="text/javascript" src="swfobject.js"></script>
+        <script type="text/javascript">
+var animPrecedente="rien";
+function afficher(nomSwf) {
+		if(animPrecedente!="rien")
+			document.getElementById("container_swfobject").removeChild(document.getElementById(animPrecedente));
+		var divContainer = document.createElement("div");
+       
+        	divContainer.id = "flashContent"; 
+ 		document.getElementById("container_swfobject").appendChild(divContainer);
+            // For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection. 
+            var swfVersionStr = "10.1.0";
+            // To use express install, set to playerProductInstall.swf, otherwise the empty string. 
+            var xiSwfUrlStr = "playerProductInstall.swf";
+            var flashvars = {};
+            var params = {};
+            params.quality = "high";
+            params.bgcolor = "#000000";
+            params.allowscriptaccess = "sameDomain";
+            params.allowfullscreen = "true";
+            var attributes = {};
+		animPrecedente=nomSwf;
+            attributes.id = animPrecedente;
+
+            attributes.name = "Main";
+            attributes.align = "middle";
+            swfobject.embedSWF(
+                nomSwf+".swf", "flashContent", 
+                "80%", "80%", 
+                swfVersionStr, xiSwfUrlStr, 
+                flashvars, params, attributes);
+            // JavaScript enabled so display the flashContent div in case it is not replaced with a swf object.
+            swfobject.createCSS("#flashContent", "display:block;text-align:left;");
+}
+        </script>
+    </head>
+    <body>
+
+<div id="container_swfobject"></div>
+       <div id="menu" >
+<select onchange="afficher(this.value)">
+  <option label="test" value="rien1">Choisissez un jeu</option>
+  <option label="test" value="compcirc1">Complément circonstanciel 1</option>
+  <option label="test" value="compcirc2">Complément circonstanciel 2</option>
+  <option label="test" value="mesures">Mesures</option>
+  <option label="test" value="passesimple">Passe simple</option>
+  <option label="test" value="produits1">Produits 1</option>
+<option label="test" value="produits2">Produits 2</option>
+<option label="test" value="produits3">Produits 3</option>
+<option label="test" value="pronoms1">Pronoms 1</option>
+<option label="test" value="pronoms2">Pronoms 2</option>
+<option label="test" value="part_present1">Participe présent 1</option>
+<option label="test" value="part_present2">Participe présent 1</option>
+<option label="test" value="homonymes2">Pronoms COD</option>
+
+</select>
+&nbsp; <a href="bin.zip"> telecharger les jeux</a>
+</div> 
+  
+   </body>
+</html>

@@ -1,0 +1,161 @@
+<project name="manualbuild" default="tout_compiler" basedir="..">
+	<property name="auto.dir" value="${basedir}/data/vero" />
+	<property name="ant.dir" value="${basedir}/ant" />
+	<target name="tout_compiler">
+		<antcall target="4db5323f0baf7"></antcall>
+		<antcall target="4db5879b0b00c"></antcall>
+		<antcall target="4db5a9ab481f3"></antcall>
+		<antcall target="4db67f4dcfaba"></antcall>
+		<antcall target="4db6834487c7d"></antcall>
+		<antcall target="4db588236ff5a"></antcall>
+		<antcall target="4db69679bfe97"></antcall>
+		<antcall target="4dda6278cebd7"></antcall>
+		<antcall target="4dda62f67c6b4"></antcall>
+		<antcall target="4dda806692d6b"></antcall>
+		<antcall target="4dda8197cb975"></antcall>
+		<antcall target="4dda829e6d645"></antcall>
+	</target>
+	<target name="4db5323f0baf7">
+		<antcall target="compiler">
+			<param name="game_name" value="MOTS-TRIS" />
+			<param name="xml_name" value="4db5323f0baf7" />
+			<param name="swf_name" value="produits1" />
+		</antcall>
+	</target>
+	<target name="4db5879b0b00c">
+		<antcall target="compiler">
+			<param name="game_name" value="BRULE-MOTS" />
+			<param name="xml_name" value="4db5879b0b00c" />
+			<param name="swf_name" value="compcirc1" />
+		</antcall>
+	</target>
+
+
+	<target name="4db588236ff5a">
+		<antcall target="compiler">
+			<param name="game_name" value="MOTS-TRIS" />
+			<param name="xml_name" value="4db588236ff5a" />
+			<param name="swf_name" value="compcirc2" />
+
+		</antcall>
+	</target>
+	<target name="4db5a9ab481f3">
+		<antcall target="compiler">
+			<param name="game_name" value="BRULE-MOTS" />
+			<param name="xml_name" value="4db5a9ab481f3" />
+			<param name="swf_name" value="passesimple" />
+
+		</antcall>
+	</target>
+	<target name="4db67f4dcfaba">
+		<antcall target="compiler">
+			<param name="game_name" value="MOTS-TRIS" />
+			<param name="xml_name" value="4db67f4dcfaba" />
+			<param name="swf_name" value="produits2" />
+
+		</antcall>
+	</target>
+	<target name="4db6834487c7d">
+		<antcall target="compiler">
+			<param name="game_name" value="MOTS-TRIS" />
+			<param name="xml_name" value="4db6834487c7d" />
+			<param name="swf_name" value="produits3" />
+
+		</antcall>
+	</target>
+	<target name="4db69679bfe97">
+		<antcall target="compiler">
+			<param name="game_name" value="MOTS-TRIS" />
+			<param name="xml_name" value="4db69679bfe97" />
+			<param name="swf_name" value="mesures" />
+
+		</antcall>
+	</target>
+	<!--
+	<target name="4dda2234df49a">
+		<antcall target="compiler">
+			<param name="game_name" value="MOTS-TRIS" />
+			<param name="xml_name" value="4dda2234df49a" />
+			<param name="swf_name" value="homonymes1" />
+
+		</antcall>
+	</target>
+	<target name="4dda2322afa58">
+		<antcall target="compiler">
+			<param name="game_name" value="MOTS-TRIS" />
+			<param name="xml_name" value="4dda2322afa58" />
+			<param name="swf_name" value="prov" />
+
+		</antcall>
+	</target> 
+	-->
+
+	<target name="4dda6278cebd7">
+		<antcall target="compiler">
+			<param name="game_name" value="BRULE-MOTS" />
+			<param name="xml_name" value="4dda6278cebd7" />
+			<param name="swf_name" value="part_present1" />
+
+		</antcall>
+	</target>
+	<target name="4dda62f67c6b4">
+		<antcall target="compiler">
+			<param name="game_name" value="MOTS-TRIS" />
+			<param name="xml_name" value="4dda62f67c6b4" />
+			<param name="swf_name" value="part_present2" />
+		</antcall>
+	</target>
+	<target name="4dda806692d6b">
+		<antcall target="compiler">
+			<param name="game_name" value="MOTS-TRIS" />
+			<param name="xml_name" value="4dda806692d6b" />
+			<param name="swf_name" value="pronoms1" />
+
+		</antcall>
+	</target>
+	<target name="4dda8197cb975">
+		<antcall target="compiler">
+			<param name="game_name" value="MOTS-TRIS" />
+			<param name="xml_name" value="4dda8197cb975" />
+			<param name="swf_name" value="pronoms2" />
+
+		</antcall>
+	</target>
+	<target name="4dda829e6d645">
+		<antcall target="compiler">
+			<param name="game_name" value="BRULE-MOTS" />
+			<param name="xml_name" value="4dda829e6d645" />
+			<param name="swf_name" value="homonymes2" />
+
+		</antcall>
+	</target>
+	<target name="4dda89083b8b4">
+		<antcall target="compiler">
+			<param name="game_name" value="BRULE-MOTS" />
+			<param name="xml_name" value="4dda89083b8b4" />
+			<param name="swf_name" value="homonymes1" />
+
+		</antcall>
+	</target>
+	<target name="4dda89ae7aef2">
+		<antcall target="compiler">
+			<param name="game_name" value="BRULE-MOTS" />
+			<param name="xml_name" value="4dda89ae7aef2" />
+			<param name="swf_name" value="prov" />
+
+		</antcall>
+	</target>
+
+
+	<target name="compiler">
+		<ant antfile="ant/game_build.xml">
+			<property name="game_name" value="${game_name}" />
+			<property name="nom_swf" value="${swf_name}" />
+			<property name="chemin_options" value="../../../../../../data/vero/options_${xml_name}.xml" />
+			<property name="chemin_contenu" value="../../../../../../data/vero/contenu_${xml_name}.xml" />
+			<property name="largeur" value="1024" />
+			<property name="hauteur" value="768" />
+		</ant>
+
+	</target>
+</project>

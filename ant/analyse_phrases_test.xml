@@ -1,0 +1,40 @@
+<project name="Tests analyse contenu" basedir=".." default="test">
+        <property name="FLEX_HOME" location="${basedir}/flex_sdk" />
+
+        <property name="bin.dir" value="${basedir}/bin" />
+        <property name="report.dir" value="${basedir}/reports" />
+        <property name="lib.dir" value="${basedir}/lib" />
+        <property name="test-src.dir" value="${basedir}/src_test" />
+        <property name="src.dir" value="${basedir}/src" />
+
+        <taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+        <taskdef resource="flexUnitTasks.tasks" classpath="${lib.dir}/flexUnitTasks-4.1.0-beta1.14.jar" />
+
+        <target name="test" depends="init" description="Run Unit Tests">
+                <flexunit
+                        workingDir="${bin.dir}"
+                        toDir="${report.dir}"
+                        verbose="true"
+                        haltonfailure="false">
+						<source dir="${src.dir}" />
+
+                        <testSource dir="${test-src.dir}">
+                                <include name="**/*Test*.as" />
+                        </testSource>
+                        <library dir="${lib.dir}" />
+                </flexunit>
+
+                <junitreport todir="${report.dir}">
+                        <fileset dir="${report.dir}">
+                                <include name="TEST-*.xml" />
+                        </fileset>
+                        <report format="frames" todir="${report.dir}/html" />
+                </junitreport>
+
+        </target>
+
+        <target name="init">
+                <delete dir="${report.dir}" />
+                <mkdir dir="${report.dir}" />
+        </target>
+</project>

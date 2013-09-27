@@ -1,0 +1,11 @@
+<project name="allumots - test local" default="compiler" basedir="..">
+	<target name="compiler">
+		<ant antfile="ant/game_build.xml" >
+			<property name="game_name" value="BRULE-MOTS" />
+			<property name="chemin_options" value="../../../../../../data/options_4d9b2a6f7146c.xml" />
+			<property name="chemin_contenu" value="../../../../../../data/contenu_4d9b2a6f7146c.xml" />
+			<property name="largeur" value="1200" />
+			<property name="hauteur" value="1024" />
+		</ant>
+	</target>
+</project>
